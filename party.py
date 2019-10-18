@@ -15,8 +15,10 @@ def is_mel(name, email):
         True
         >>> is_mel('Judith Butler', 'judith@awesome.com')
         False
-
-
+        >>> is_mel('Mel Melitpolski', 'judith@awesome.com')
+        True
+        >>> is_mel('Judith Something', 'mel@ubermelon.com')
+        True
     """
 
     return name == "Mel Melitpolski" or email == "mel@ubermelon.com"
@@ -26,6 +28,30 @@ def most_and_least_common_type(treats):
     """Given list of treats, return most and least common treat types.
 
     Return most and least common treat types in tuple of format (most, least).
+
+    Examples:
+        >>> treats = [
+        ...     {'type': 'dessert'},
+        ...     {'type': 'dessert'},
+        ...     {'type': 'appetizer'},
+        ...     {'type': 'dessert'},
+        ...     {'type': 'appetizer'},
+        ...     {'type': 'drink'}
+        ... ]
+        >>> most_and_least_common_type(treats)
+        ('dessert', 'drink')
+
+        >>> treats = [
+        ...     {'type': 'drink'},
+        ...     {'type': 'drink'}
+        ... ]
+        >>> most_and_least_common_type(treats)
+        ('drink', 'drink')
+
+        >>> treats = []
+        >>> most_and_least_common_type(treats)
+        (None, None)
+
     """
 
     types = {}
